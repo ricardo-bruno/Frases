@@ -10,6 +10,8 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import java.util.Random;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -32,7 +34,11 @@ public class MainActivity extends AppCompatActivity {
                 "Quando teremos pizza?",
                 "Essa turma é uma turma Suprema!",
                 "As polstronas de massagem do nosso Líder Supremo são da marca Suprema Plus!"};
-        int indice = (int) (Math.random() * frases.length);
+
+        //int indice = (int) (Math.random() * frases.length);
+
+        Random geradorAleatorio = new Random();
+        int indice = geradorAleatorio.nextInt(frases.length);
 
         TextView texto = findViewById(R.id.texto);
         texto.setText(frases[indice]);
